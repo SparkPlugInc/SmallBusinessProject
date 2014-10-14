@@ -22,6 +22,12 @@
     <link href="http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css">
     <link href="http://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
 
+    <!-- Backendless -->
+    <!-- Latest compiled JavaScript -->
+    <script src="http://api.backendless.com/sdk/js/latest/backendless.js"></script>
+    <!-- Application JavaScript -->
+    <script src="js/admin.js"></script>
+
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -100,27 +106,33 @@
     <!-- Interested Section -->
     <section id="download" class="container content-section text-center">
             <div class="col-lg-8 col-lg-offset-2">
-                    <h2>Interessed?</h2>
-                    <h4> We will keep you up to date!</h4>
-                    <form>
-                        email: <input style="color:black;" type="text" name="email"><br>
-                        <input type="radio" name="sex" value="male">Male
-                        <input type="radio" name="sex" value="female">Female<br>
-                        <select style="color:black;">
-                          <option value="Calvin Klein">Calvin Klein</option>
-                          <option value="Chantelle">Chantelle</option>
-                          <option value="DIM">DIM</option>
-                          <option value="DNYK">DNYK</option>
-                          <option value="Esprit">Esprit</option>
-                          <option value="Hunkemoller">Hunkemoller</option>
-                          <option value="Marie Jo">Marie Jo</option>
-                          <option value="Passionata">Passionata</option>
-                          <option value="Triumph">Triumph</option>
-                          <option value="Other">Other</option>
-                        </select> <br> <br>
-                        <input class="btn btn-default btn-lg" type="submit" value="Submit">
-                    </form>
-                </div>
+                <h2>Interessed?</h2>
+                <h4> We will keep you up to date!</h4>
+                <form>
+                    Email:
+                    <input style="color:black;" type="text" name="email">
+                    <br>
+                    <input id="inputSexMale" type="radio" name="sex" value="male">Male
+                    <input id="inputSexFemale" type="radio" name="sex" value="female">Female
+                    <br>
+                    <select id="inputFavorite" style="color:black;">
+                        <option value="Calvin Klein">Calvin Klein</option>
+                        <option value="Chantelle">Chantelle</option>
+                        <option value="DIM">DIM</option>
+                        <option value="DNYK">DNYK</option>
+                        <option value="Esprit">Esprit</option>
+                        <option value="Hunkemoller">Hunkemoller</option>
+                        <option value="Marie Jo">Marie Jo</option>
+                        <option value="Passionata">Passionata</option>
+                        <option value="Triumph">Triumph</option>
+                        <option value="Other">Other</option>
+                    </select>
+                    <br>
+                    <br>
+                    <input class="btn btn-default btn-lg" type="submit" value="Submit" onclick="saveInfo()">
+                </form>
+            </div>
+        </div>
     </section>
 
     <!-- Contact Section -->
