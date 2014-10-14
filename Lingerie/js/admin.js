@@ -32,5 +32,18 @@ function saveInfo() {
         sex: sex,
         favorite: favorite
     });
-    database.save(infoObject);
+
+    var query = {
+        condition: "email = '" + email + "'"
+    };
+    var result = database.find(query);
+    if (result.data.length > 0) {
+        console.log("Already exists");
+        var existingInfo = result.data[0];
+        existingInfo["sex"] = sex;
+        existingInfo["favorite"] = favorite;
+        database.save(existingInfo);
+    } else {
+        database.save(infoObject);
+    }
 }
