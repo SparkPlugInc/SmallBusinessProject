@@ -29,7 +29,7 @@
     <!-- Latest compiled JavaScript -->
     <script src="http://api.backendless.com/sdk/js/latest/backendless.js"></script>
     <!-- Application JavaScript -->
-    <script src="js/admin.js"></script>
+    <script src="js/submit.js"></script>
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -116,11 +116,11 @@
     <!-- Interested Section -->
     <section id="download" class="container content-section text-center">
         <div class="col-lg-8 col-lg-offset-2">
-            <h2>Interessed?</h2>
+            <h2>Interested?</h2>
             <h4> We will keep you up to date!</h4>
             <form>
                 Email:
-                <input style="color:black;" type="text" name="email">
+                <input id="inputEmail" style="color:black;" type="text" name="email">
                 <br>
                 <input id="inputSexMale" type="radio" name="sex" value="male">Male
                 <input id="inputSexFemale" type="radio" name="sex" value="female">Female
@@ -141,7 +141,6 @@
                 <br>
                 <input class="btn btn-default btn-lg" type="submit" value="Submit" onclick="saveInfo()">
             </form>
-        </div>
         </div>
     </section>
 
