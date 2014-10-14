@@ -9,18 +9,31 @@ function Info(args) {
     this.favorite = args.favorite || "";
 }
 
+function Pie(args) {
+    args = args || {};
+    this.value = args.value || "";
+    this.color = args.color || "";
+    this.highlight = args.highlight || "";
+    this.label = args.label || "";
+}
+
 window.onload = function () {
     Backendless.initApp(APPLICATION_ID, SECRET_KEY, VERSION);
     var database = Backendless.Persistence.of(Info);
 
-    var favorites = new Object();
+    var favorites = [];
 
     var countQuery = database.find(Info);
     countQuery.data.forEach(function (info) {
         if (!(info.favorite in favorites)) {
             favorites[info.favorite] = 1;
         } else {
-            favorites[info.favorite] += 1;
+            favorites.push(new Pie({
+                value: 1,
+                color: "#F7464A",
+                highlight: "#FF5A5E",
+                label: info.favorite
+            }));
         }
     });
 
@@ -41,4 +54,7 @@ window.onload = function () {
     document.getElementById("txtCount").innerText = "#People: " + count;
     document.getElementById("txtMale").innerText = "#Males: " + males;
     document.getElementById("txtFemale").innerText = "#Females: " + females;
+
+    var context = document.getElementById("chartFavorite").getContext("2d");
+    var chartFavorite = new Chart(context).Pie(data);
 }
